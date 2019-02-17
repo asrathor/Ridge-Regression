@@ -1,0 +1,24 @@
+import numpy as np
+
+def ldaLearn(X,y):
+    # Inputs
+    # X - a N x d matrix with each row corresponding to a training example
+    # y - a N x 1 column vector indicating the labels for each training example
+    #
+    # Outputs
+    # means - A d x k matrix containing learnt means for each of the k classes
+    # covmat - A single d x d learnt covariance matrix
+    means = np.sum(X,0)
+    means=means/X.shape[0]
+    covmat = np.dot(X,X.T)
+    # IMPLEMENT THIS METHOD
+    print(means)
+    print("~~~~~~~~~~~~~~~~~~~~~~")
+    print(covmat)
+    return means,covmat
+
+xx=np.ones((9,10))
+yy=np.zeros((10))
+xx[3]=1
+
+ldaLearn(xx,yy)
